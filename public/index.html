@@ -508,8 +508,6 @@ footer {
   .steps { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 380px; }
-  .showcase-grid { grid-template-columns: 1fr; }
-  .crowd-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
 @media (max-width: 540px) {
@@ -592,6 +590,13 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
 .sample-link { display: block; text-align: center; margin-top: 12px; font-size: 13.5px; color: var(--teal); font-weight: 600; text-decoration: none; }
 .sample-link:hover { text-decoration: underline; }
 .price-note { text-align: center; font-size: 11.5px; color: var(--ink-light); margin-top: 10px; }
+
+/* these grids are defined after the main responsive block, so their
+   mobile overrides must come after them too or source order wins */
+@media (max-width: 860px) {
+  .showcase-grid { grid-template-columns: 1fr; }
+  .crowd-grid { grid-template-columns: 1fr; }
+}
 
 /* ── ANIMATIONS ── */
 .fade-up {
