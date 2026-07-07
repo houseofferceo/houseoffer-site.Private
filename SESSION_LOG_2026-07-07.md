@@ -138,3 +138,32 @@ Judgment calls:
 - Verified: anchors, hero-form focus from all three CTAs, track links,
   DOM-level checks (no neg-banner, one crowd section, 11 tier chips),
   1440px + 390px screenshots.
+
+
+═══════════════════════════════════════════════════════════════════════
+# ADDENDUM 2 — post-deploy CEO tweaks (fresh branch off merged main)
+═══════════════════════════════════════════════════════════════════════
+
+Showcase v2 was merged/deployed. These four tweaks restart the branch
+from main and are NOT yet merged.
+
+1. Hero sub-headline rewritten (CEO verbatim): "Everyone in the deal works
+   for the seller. We work for you. Paste a Rightmove link and get the
+   buyer's side of the table: what similar homes actually sold for, a
+   defensible offer range, a deliberate opening position and your walk-away
+   number — with a confidence score on every report so you know exactly how
+   far to trust it." NOTE: reintroduces the word "exactly" that the 19-item
+   pass had scrubbed from the hero — kept because it's CEO-supplied copy and
+   refers to trust calibration (the confidence score), not the banned
+   "exactly what to offer/say" framing.
+2. Offer trio colours now escalate teal → amber → red (Open with / Target /
+   Walk away above), all solid-filled white-text, style-guide vars only.
+3. Seller signal card gained a motivation gauge: white track, teal fill to
+   ~80% with a knob, "Not motivated" → "Highly motivated". Style-guide
+   colours only.
+4. Offer Frontier: "time on market shifts the curve" arrow + label moved
+   right (arrow x1 330→392, x2 416→478; text x 373→435) so they no longer
+   overlap the green curve.
+
+Verified: functional checks pass (anchors, hero-form focus ×3, track links,
+no JS errors); desktop + mobile screenshots of all four.
