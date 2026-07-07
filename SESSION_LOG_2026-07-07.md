@@ -167,3 +167,92 @@ from main and are NOT yet merged.
 
 Verified: functional checks pass (anchors, hero-form focus ×3, track links,
 no JS errors); desktop + mobile screenshots of all four.
+
+
+═══════════════════════════════════════════════════════════════════════
+# ADDENDUM 3 — "One offer, two lenses" reconciliation (frontend half)
+═══════════════════════════════════════════════════════════════════════
+
+Phase 1 framing CEO-approved; Phase 2 on this branch (restarted from main).
+Backend half (report_paid.html, FRONTIER_METHODOLOGY.md v1.1 §13,
+tools/demo_two_lenses.py) is on the same-named branch in houseoffer-backend,
+logged in its SESSION_LOG_2026-07-07.md. No calculation changes anywhere —
+backend `git diff app.py` is empty.
+
+## Generated, not authored
+All trio/frontier/method figures on homepage, /sample-report/ and the white
+paper worked example now come from tools/demo_two_lenses.py, which executes
+the REAL trio source and _offer_frontier. Real output for the demo property:
+trio £357,000 / £360,000 / £368,000; Frontier anchor 5.2% — Secure
+£366,000–£368,000 (2.5–5%), Balanced £354,000–£366,000 (5–8%), Aggressive
+£352,000–£354,000 (8–10.5%). This fixes the two audit findings: the
+impossible Secure £372,000 on /sample-report/ (above its own walk-away) and
+the hand-written £355,000 open (the real calc emits £357,000).
+
+## Surfaces changed
+- Homepage showcase: VALUE LENS header → trio (£357k open) → football field
+  (bars redrawn to the harness inputs so the weighted 352–368k actually
+  follows from the displayed bars under the real formula — it never did
+  before) → PRESSURE LENS header → Offer Frontier (real ranges + %) →
+  "Where the lenses meet" strip (overpriced-convergence narrative) →
+  evidence grid → free-tier close. New CSS: .lens-chip/.lens-head/.lens-meet.
+- /sample-report/: frontier section retitled "One offer, two lenses" with
+  the intro + value/pressure panels and meet strip (mirrors the paid
+  template, static, blur pattern kept); trio → £357,000 with recomputed
+  honesty percentages (7.3% below asking / 0.8% below comps); position
+  cards → real ranges; football-field rows regenerated on one clean linear
+  scale (the old bars were eyeballed and internally inconsistent); method
+  table midpoints → harness midpoints.
+- /white-paper/: "Calculating the offer" replaced by "Two lenses on one
+  offer" — concept only, coefficients explicitly withheld ("this paper
+  describes the logic, not the coefficients"); method list + figure bars +
+  both chart markers updated to the generated numbers; Case Study A opens
+  at £357,000. Valuation methodology (ten methods, sources, confidence)
+  already published in full from the earlier pass; not-advice/not-RICS
+  disclaimer already present.
+
+## Judgment calls
+- Demo method inputs were CHOSEN so the real calc lands on the established
+  example range (352–368k/360k/£385k asking): preserves every downstream
+  example number. The visible cost: per-method bars changed on all three
+  surfaces (they now sum correctly under the real weighted-mean formula).
+- Homepage layout: value lens (trio+chart) and pressure lens (frontier)
+  are now adjacent, with the evidence cards AFTER the meet strip under
+  their own small header ("The evidence behind both, piece by piece") —
+  keeps the two lenses reading as one story.
+- The DOM card's "3–7% below asking" discount strip is a separate report
+  feature (not trio/frontier) and was left as-is.
+- Frontier position cards on marketing surfaces now show RANGES because
+  that is what the live product renders (price_label) — the single prices
+  were another mock artifact.
+
+## Four-surface consistency check (one-sentence description each)
+Canonical: "The value lens (open · target · walk-away) tells you where to
+land inside what the home is worth; the pressure lens (Secure · Balanced ·
+Aggressive) tells you how hard the seller's position lets you push — two
+readings of one offer, and neither ever points past your walk-away."
+1. Homepage (teaser): "It answers two different questions — what the home is
+   actually worth, and how hard the seller's position lets you push —
+   because one number can't answer both." (+ meet strip: "neither ever
+   points past your walk-away" via floor/ceiling line.)
+2. Paid report (full view): lens-intro — "Your offer answers two different
+   questions. What is this home actually worth? And how hard will the
+   seller's position let you push? … one number can't answer both." Panels
+   name the lenses; meet strip carries the shared floor/ceiling.
+3. White paper (public concept): "the pressure lens tells you how hard to
+   push and the value lens tells you when to stop: however weak the seller
+   looks, no Frontier position is ever shown below the valuation floor or
+   above the walk-away."
+4. Dev doc (internal spec): FRONTIER_METHODOLOGY.md §13.3 quotes the
+   canonical sentence verbatim, plus both formulae and the convergence note.
+All four describe the same relationship: two intentionally distinct
+calculations, complementary lenses, sharing only the floor/ceiling bounds.
+
+## Verification
+- Homepage functional checks all pass (anchors, form focus ×3, track links,
+  no JS errors); tag balance checked on homepage + sample-report.
+- Sweeps: no £372,000 remains; no "gut"; "Calculating the offer" gone;
+  £357,000 present on all three surfaces.
+- Screenshots delivered in chat: homepage showcase (desktop), sample-report
+  two-lens frontier, white-paper figure.
+- NOT merged, NOT deployed — awaiting CEO review (both repos).
