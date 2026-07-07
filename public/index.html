@@ -601,6 +601,23 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
   .crowd-grid { grid-template-columns: 1fr; }
 }
 
+/* ── £29 SHOWCASE: tier chips, frontier positions, approach list ── */
+.tier-chip { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; border-radius:12px; padding:2px 9px; white-space:nowrap; }
+.tier-chip.free { background:var(--teal-light); color:var(--teal); border:1px solid var(--teal-border); }
+.tier-chip.paid { background:var(--teal); color:white; border:1px solid var(--teal); }
+.pos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:12px; }
+.pos-card { border-radius:10px; padding:12px 14px; border:1.5px solid var(--sand-border); background:var(--sand); }
+.pos-card.emph { border-color:var(--amber); background:#fdf6ec; }
+.pos-name { font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-mid); margin-bottom:4px; display:flex; align-items:center; gap:6px; }
+.pos-dot { width:8px; height:8px; border-radius:50%; background:var(--ink-mid); }
+.pos-card.emph .pos-dot { background:var(--amber); }
+.pos-price { font-family:'Lora',serif; font-size:19px; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.pos-desc { font-size:11.5px; color:var(--ink-mid); line-height:1.5; }
+.approach-list { list-style:none; padding:0; margin:0; }
+.approach-list li { font-size:13px; color:var(--ink-mid); line-height:1.6; padding:6px 0 6px 20px; position:relative; }
+.approach-list li::before { content:"→"; position:absolute; left:0; color:var(--teal); font-weight:700; }
+.approach-list li strong { color:var(--ink); }
+
 /* ── ANIMATIONS ── */
 .fade-up {
   opacity: 0; transform: translateY(20px);
@@ -719,15 +736,32 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
   </div>
 </div>
 
-<!-- £29 OFFER REPORT SHOWCASE -->
+<!-- £29 OFFER REPORT SHOWCASE — full-report mock -->
 <section class="section features-bg" id="report">
   <div class="section-inner">
-    <div class="fade-up" style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:10px;">
       <span style="display:inline-block; background:var(--teal); color:white; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:20px;">£29 Offer Report</span>
       <p class="section-eyebrow" style="margin:0;">Inside the full report</p>
     </div>
-    <h2 class="fade-up">Walk into the negotiation<br>prepared</h2>
-    <p class="section-sub fade-up">This is the report you buy when you're ready to offer — shown here for a fictional example property. Ten valuation methods, one defensible range, and the three numbers you take into the negotiation.</p>
+    <h2>Walk into the negotiation<br>prepared</h2>
+    <p class="section-sub">The complete report, piece by piece — recreated for a fictional example property. The pieces marked <span class="tier-chip free">Free</span> are in the free report; everything else unlocks with the £29 report.</p>
+
+    <!-- OFFER TRIO -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:26px 0 16px;">
+      <div style="background:var(--teal); color:white; border-radius:12px; padding:18px 20px;">
+        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:5px;">Open with</p>
+        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:white;">£355,000</p>
+      </div>
+      <div style="background:white; border:1.5px solid var(--teal); border-radius:12px; padding:18px 20px;">
+        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--teal); margin-bottom:5px;">Target</p>
+        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:var(--ink);">£360,000</p>
+      </div>
+      <div style="background:white; border:1.5px solid var(--sand-border); border-radius:12px; padding:18px 20px;">
+        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-light); margin-bottom:5px;">Walk away above</p>
+        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:var(--ink);">£368,000</p>
+      </div>
+    </div>
+    <p style="font-size:12px; color:var(--ink-light); margin-bottom:36px;"><span class="tier-chip paid">£29</span> Your three numbers — set before the emotion starts, from the ten methods below.</p>
 
     <!-- FOOTBALL FIELD VISUAL -->
     <div class="fade-up" style="background:white;border-radius:16px;padding:28px 28px 20px;margin-bottom:40px;box-shadow:0 2px 16px rgba(30,28,24,0.07);">
@@ -842,55 +876,149 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
       <p style="font-size:11.5px;color:var(--ink-light);margin-top:10px;">Methods shown are the ones inside every real report. The full report also breaks out comparable sales with and without price-index adjustment, and rental-yield implied value where rental data exists.</p>
     </div>
 
-    <!-- OFFER TRIO -->
-    <div class="fade-up" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin:18px 0 40px;">
-      <div style="background:var(--teal); color:white; border-radius:12px; padding:18px 20px;">
-        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:rgba(255,255,255,0.75); margin-bottom:5px;">Open with</p>
-        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:white;">£355,000</p>
+
+
+    <!-- REPORT PIECES -->
+    <div class="showcase-grid" style="margin-top:0;">
+
+<div class="fade-up">
+        <div class="mock-card">
+          <div class="mock-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>Our valuation</span><span class="tier-chip free">Free</span></span></div>
+          <div class="mock-val-main">
+            <div>
+              <div class="mock-val-label">Estimated market value</div>
+              <div class="mock-val-number">£360,000</div>
+              <div class="mock-val-range">Range: £352,000 – £368,000</div>
+            </div>
+            <div>
+              <div class="mock-val-label">Asking price</div>
+              <div class="mock-val-number" style="font-size:24px; color:var(--ink-mid);">£385,000</div>
+              <span class="mock-diff-badge">7% above our estimate</span>
+            </div>
+          </div>
+          <div class="conf-row-mock" style="margin-bottom:0; padding-top:14px; border-top:1px solid var(--sand-border);">
+            <span class="conf-badge-mock">● HIGH confidence</span>
+            <span class="conf-reason-mock">12 comparable sales · postcode-matched</span>
+          </div>
+        </div>
       </div>
-      <div style="background:white; border:1.5px solid var(--teal); border-radius:12px; padding:18px 20px;">
-        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--teal); margin-bottom:5px;">Target</p>
-        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:var(--ink);">£360,000</p>
+
+<div class="fade-up">
+        <div class="mock-verdict">
+          <div class="mock-verdict-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>Our verdict</span><span class="tier-chip free">Free</span></span></div>
+          <div class="mock-verdict-headline">This seller is asking for more than the market says it's worth</div>
+          <div class="mock-verdict-body">Based on 12 completed sales of similar homes nearby, adjusted to today's value, this property is asking <strong style="color:var(--ink);">7% more</strong> than what similar homes have actually sold for.</div>
+        </div>
       </div>
-      <div style="background:white; border:1.5px solid var(--sand-border); border-radius:12px; padding:18px 20px;">
-        <p style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:var(--ink-light); margin-bottom:5px;">Walk away above</p>
-        <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:var(--ink);">£368,000</p>
+
+      <div class="fade-up">
+        <div class="mock-card">
+          <div class="mock-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>🎯 Your negotiation approach</span><span class="tier-chip paid">£29</span></span></div>
+          <ul class="approach-list">
+            <li><strong>You're chain-free.</strong> Sellers value that certainty — make sure the agent records it the moment you offer.</li>
+            <li><strong>Comparing several properties is leverage.</strong> Stay visibly willing to walk away.</li>
+            <li><strong>Flexibility is an underrated card.</strong> Matching the seller's timeline can be worth more than another £1,000.</li>
+          </ul>
+          <div style="font-size:12px; color:var(--ink-mid); background:var(--sand); border:1px dashed var(--sand-border); border-radius:10px; padding:9px 13px; margin-top:10px; line-height:1.55;">Personalised to your buying position — first-time buyer, chain-free or selling to buy, the emphasis changes; the evidence never does.</div>
+        </div>
       </div>
+
+
+
+<div class="fade-up">
+        <div class="mock-card" style="background:var(--teal-light); border-color:var(--teal-border);">
+          <div class="mock-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>📶 Seller signal</span><span class="tier-chip paid">£29</span></span></div>
+          <span style="display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 12px; border-radius:20px; color:white; background:var(--teal); margin-bottom:8px;">STRONG seller motivation</span>
+          <div style="font-size:13.5px; color:var(--ink-mid); line-height:1.6;">Multiple public signals point the same way: the listing has sat well beyond the local average, and the seller has already reduced the price once. Pressure like this is leverage — use it politely.</div>
+        </div>
+      </div>
+
+<div class="fade-up">
+        <div class="mock-card">
+          <div class="mock-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>⏳ Days on market</span><span class="tier-chip free">Free</span></span></div>
+          <div style="font-family:'Lora', serif; font-size:17px; font-weight:600; color:var(--ink); line-height:1.35; margin-bottom:6px;">47 days on market — every day that passes, your leverage grows</div>
+          <div class="mock-dom-track">
+            <div class="mock-dom-mkr" style="left:72%;">
+              <div class="mock-dom-mkr-label">This property</div>
+              <div class="mock-dom-mkr-dot"></div>
+            </div>
+          </div>
+          <div class="mock-dom-labels"><span>Just listed</span><span>Local average (32 days)</span><span>Stale listing</span></div>
+          <div style="margin-top:14px; background:var(--sand); border:1px dashed var(--sand-border); border-radius:10px; padding:10px 14px; font-size:12.5px; color:var(--ink-mid); line-height:1.55; display:flex; gap:10px; align-items:flex-start;">
+            <span class="tier-chip paid" style="flex-shrink:0; margin-top:1px;">£29</span>
+            <span>Properties on the market this long typically go <strong>3–7% below asking</strong> — roughly <strong>£11,500–£27,000</strong> here. Context only: your numbers come from the valuation methods, not the clock.</span>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="fade-up">
+        <div class="mock-card" style="padding:16px 18px 10px;">
+          <div class="mock-eyebrow" style="margin-bottom:6px;"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>12 sold prices used in this analysis</span><span class="tier-chip free">3 free</span> <span class="tier-chip paid">All 12 · £29</span></span></div>
+          <table class="mock-comp-table">
+            <thead><tr><th>Address</th><th>Date</th><th>Sale price</th></tr></thead>
+            <tbody>
+              <tr><td>18 Maple Close, BS6</td><td>2026-03</td><td>£357,500</td></tr>
+              <tr><td>4 Orchard Road, BS6</td><td>2026-01</td><td>£349,000</td></tr>
+              <tr><td>27 Fern Grove, BS6</td><td>2025-11</td><td>£371,000</td></tr>
+              <tr class="mock-blur"><td>31 Maple Close, BS6</td><td>2025-10</td><td>£344,000</td></tr>
+              <tr class="mock-blur"><td>9 Elton Lane, BS6</td><td>2025-09</td><td>£362,500</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+<div class="fade-up" style="grid-column:1/-1;">
+        <div class="mock-card">
+          <div class="mock-eyebrow"><span style="display:flex;justify-content:space-between;align-items:center;gap:10px;"><span>📈 The Offer Frontier — where to position your offer</span><span class="tier-chip paid">£29</span></span></div>
+          <div style="font-size:13px; color:var(--ink-mid); line-height:1.6; margin-bottom:10px;">Discount sought vs risk of losing it — built from this area's actual asking-to-sold discounts, shifted by 47 days on the market. You can't seek a bigger saving without accepting more risk; you can only choose your position deliberately.</div>
+          <svg viewBox="0 0 640 240" style="width:100%;display:block;" role="img" aria-label="Offer positioning curve: discount sought against qualitative risk of losing the property, with secure, balanced and aggressive positions marked.">
+            <line x1="60" y1="200" x2="610" y2="200" stroke="#e0d9ce" stroke-width="1.5"/>
+            <line x1="60" y1="200" x2="60" y2="20" stroke="#e0d9ce" stroke-width="1.5"/>
+            <text x="335" y="228" text-anchor="middle" font-size="11" fill="#9b9488" font-family="Plus Jakarta Sans,sans-serif">Discount sought below asking →</text>
+            <text x="26" y="110" text-anchor="middle" font-size="11" fill="#9b9488" font-family="Plus Jakarta Sans,sans-serif" transform="rotate(-90 26 110)">Risk of losing it →</text>
+            <text x="54" y="196" text-anchor="end" font-size="10" fill="#9b9488" font-family="Plus Jakarta Sans,sans-serif">Low</text>
+            <text x="54" y="34" text-anchor="end" font-size="10" fill="#9b9488" font-family="Plus Jakarta Sans,sans-serif">High</text>
+            <path d="M 60 196 Q 200 190 300 120 T 430 30" fill="none" stroke="#c9c2b4" stroke-width="2" stroke-dasharray="6,5"/>
+            <text x="240" y="105" font-size="10.5" fill="#9b9488" font-family="Plus Jakarta Sans,sans-serif">fresh listing</text>
+            <line x1="330" y1="150" x2="416" y2="150" stroke="#c06a1a" stroke-width="1.5" marker-end="url(#ff2arr)"/>
+            <defs><marker id="ff2arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#c06a1a"/></marker></defs>
+            <text x="373" y="166" text-anchor="middle" font-size="10" fill="#c06a1a" font-weight="600" font-family="Plus Jakarta Sans,sans-serif">time on market shifts the curve</text>
+            <path d="M 60 197 Q 280 192 420 110 T 590 26" fill="none" stroke="#1a6b5a" stroke-width="3"/>
+            <circle cx="215" cy="188" r="7" fill="#1a6b5a" stroke="white" stroke-width="2.5"/>
+            <text x="215" y="175" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a6b5a" font-family="Plus Jakarta Sans,sans-serif">SECURE</text>
+            <circle cx="400" cy="128" r="10" fill="#c06a1a" stroke="white" stroke-width="3"/>
+            <text x="400" y="112" text-anchor="middle" font-size="10.5" font-weight="700" fill="#c06a1a" font-family="Plus Jakarta Sans,sans-serif">BALANCED</text>
+            <circle cx="530" cy="58" r="7" fill="#1e1c18" stroke="white" stroke-width="2.5"/>
+            <text x="530" y="45" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1e1c18" font-family="Plus Jakarta Sans,sans-serif">AGGRESSIVE</text>
+          </svg>
+          <div class="pos-grid">
+            <div class="pos-card">
+              <div class="pos-name"><span class="pos-dot" style="background:var(--teal);"></span>Secure</div>
+              <div class="pos-price">£365,000</div>
+              <div class="pos-desc">Protect the purchase. Smallest saving, lowest risk of losing the home.</div>
+            </div>
+            <div class="pos-card emph">
+              <div class="pos-name"><span class="pos-dot"></span>Balanced</div>
+              <div class="pos-price">£360,000</div>
+              <div class="pos-desc">In line with what actually clears in this market for listings this old.</div>
+            </div>
+            <div class="pos-card">
+              <div class="pos-name"><span class="pos-dot" style="background:var(--ink);"></span>Aggressive</div>
+              <div class="pos-price">£355,000</div>
+              <div class="pos-desc">Test the seller. Biggest saving sought, highest chance of a "no".</div>
+            </div>
+          </div>
+          <div style="font-size:11.5px; color:var(--ink-light); margin-top:10px;">All three positions always show — your answers change the emphasis, never the evidence. No position is ever above your walk-away.</div>
+        </div>
+      </div>
+
+
+
     </div>
 
-    <!-- SUPPORTING FEATURES -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-      <div class="fade-up" style="background:white;border-radius:12px;padding:20px 22px;border:1px solid var(--sand-border);display:flex;gap:14px;align-items:flex-start;">
-        <div style="width:40px;height:40px;border-radius:10px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📈</div>
-        <div>
-          <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;">The Offer Frontier</p>
-          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">Three positioned strategies — secure, balanced and aggressive — with the trade-offs of each spelled out, so the number you choose is a decision, not a guess.</p>
-        </div>
-      </div>
-      <div class="fade-up" style="background:white;border-radius:12px;padding:20px 22px;border:1px solid var(--sand-border);display:flex;gap:14px;align-items:flex-start;">
-        <div style="width:40px;height:40px;border-radius:10px;background:#fce8d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">📶</div>
-        <div>
-          <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;">Seller signal score</p>
-          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">How much room the seller likely has to move, scored from days on market, price cuts and listing history.</p>
-        </div>
-      </div>
-      <div class="fade-up" style="background:white;border-radius:12px;padding:20px 22px;border:1px solid var(--sand-border);display:flex;gap:14px;align-items:flex-start;">
-        <div style="width:40px;height:40px;border-radius:10px;background:#e8f0fa;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🏘️</div>
-        <div>
-          <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;">Full comparables table</p>
-          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">Every sold price behind your valuation — address, date and price — so you can defend your number to the agent.</p>
-        </div>
-      </div>
-      <div class="fade-up" style="background:white;border-radius:12px;padding:20px 22px;border:1px solid var(--sand-border);display:flex;gap:14px;align-items:flex-start;">
-        <div style="width:40px;height:40px;border-radius:10px;background:#f0eafa;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;">🧭</div>
-        <div>
-          <p style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;">Personalised to your buying position</p>
-          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.55;">First-time buyer, chain-free, or selling to buy — your position changes your leverage, and the strategy reflects it.</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="fade-up" style="margin-top:28px; font-size:14.5px; color:var(--ink-mid);">Start with the free report — valuation, confidence score and verdict. Upgrade only when you're ready to offer.</p>
+    <p style="margin-top:28px; font-size:14.5px; color:var(--ink-mid);">Start with the free report — valuation, confidence score and verdict. Upgrade only when you're ready to offer.</p>
   </div>
 </section>
 

@@ -105,3 +105,36 @@ from nav CTA, free pricing card, and CTA band.
 - Old `.neg-banner`, `.crowd-grid`, `.steps` etc. CSS now partially unused;
   left in place deliberately (small, zero risk to shipped markup).
 - NOT merged, NOT deployed — awaiting CEO review.
+
+═══════════════════════════════════════════════════════════════════════
+# ADDENDUM — showcase v2: full-report mock (same day, after CEO review)
+═══════════════════════════════════════════════════════════════════════
+
+CEO correction to item 3: the showcase should mock the ENTIRE £29 report,
+including the free-report visuals. Iterated as a standalone draft in chat,
+approved ("apply it"), then swapped into index.html.
+
+Final showcase structure (each block chip-tagged Free or £29):
+  header + £29 badge → offer trio (moved ABOVE the chart per CEO) →
+  football field → valuation card [Free] + verdict card [Free] →
+  negotiation approach [£29] + seller signal STRONG [£29] →
+  days-on-market [Free, with the 3–7% discount strip chipped £29 inside] +
+  comparables table [3 free / all 12 £29] →
+  Offer Frontier full-width [£29]: risk-vs-discount curve (adapted from
+  /sample-report/) plus three priced positions → free-tier closing line.
+
+The abstract four-feature-card row from v1 is gone — those features now
+appear as actual report pieces. New CSS: .tier-chip, .pos-*, .approach-list.
+
+Judgment calls:
+- Frontier position prices set to Secure £365k / Balanced £360k /
+  Aggressive £355k so no position exceeds the £368k walk-away.
+  FLAG: /sample-report/ has Secure at £372,000 (blurred) — above its own
+  walk-away and contradicting its own footnote. Not fixed; awaiting CEO.
+- Crowd-voting and anchoring cards remain excluded from the showcase
+  (crowd/instinct content lives only in the post-CTA strip per the reorder
+  brief). The real paid report's "Their number vs the market" section is
+  therefore not mocked. CEO can overrule.
+- Verified: anchors, hero-form focus from all three CTAs, track links,
+  DOM-level checks (no neg-banner, one crowd section, 11 tier chips),
+  1440px + 390px screenshots.
