@@ -297,3 +297,27 @@ plots the weighted subset. Homepage now states this honestly.
 Companion backend change (Target/Walk away lines + widen) is on the same
 branch in houseoffer-backend (Addendum 2 there). Verified: functional
 checks pass, tag balance OK, desktop + mobile screenshots. NOT merged.
+
+═══════════════════════════════════════════════════════════════════════
+# ADDENDUM 5 — /sample-report/ football field = the real report card
+═══════════════════════════════════════════════════════════════════════
+CEO-approved (option 1: keep numbers blurred). The sample report's bespoke
+div-based football field is replaced by the genuine report_paid.html ff-card
+(same as homepage + paid report), with the Open/Target/Walk away/Asking
+lines and the widened gutter. Its £ figures stay BLURRED to preserve the
+paywall look — CSS classes namespaced rff-* so they don't collide with the
+sample page's own .ff-* system; numeric SVG labels wrapped in .rff-blur.
+The two context methods (rental yield, asking-to-sold) drop off the CHART
+(weighted set = 9 bars) and remain in the method TABLE below, exactly as
+the real paid report presents them. Frontier positions unchanged and
+in-range (Secure £366,000–£368,000).
+
+Note (verified, not a defect): the sample page is a FICTIONAL static demo,
+so its blurred numbers being present in page source is harmless — nothing
+real is exposed. The real free→paid gate (report_free.html) is genuinely
+server-side: paid offer numbers are never sent to the browser and the
+football field's paid-tier bars are fake placeholders, so the blur there
+covers decoys, not the answer.
+
+Verified: real card renders (19 svg rects), method table intact with all
+ten methods, frontier in-range, zero JS page errors.
