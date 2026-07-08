@@ -625,6 +625,16 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
 .approach-list li::before { content:"→"; position:absolute; left:0; color:var(--teal); font-weight:700; }
 .approach-list li strong { color:var(--ink); }
 
+/* ── REAL REPORT FOOTBALL FIELD (from report_paid.html) ── */
+.ff-card { background: var(--white); border: 1px solid var(--sand-border); border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow-sm); }
+.ff-card-header { padding: 18px 24px 14px; border-bottom: 1px solid var(--sand-border); }
+.ff-card-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.ff-card-sub { font-size: 12px; color: var(--ink-light); }
+.ff-chart-wrap { padding: 16px 20px 20px; overflow-x: auto; }
+.ff-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--sand-border); }
+.ff-legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-mid); }
+.ff-legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
 /* ── ANIMATIONS ── */
 .fade-up {
   opacity: 0; transform: translateY(20px);
@@ -773,119 +783,387 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
         <p style="font-family:'Lora',serif; font-size:26px; font-weight:700; color:white;">£368,000</p>
       </div>
     </div>
-    <p style="font-size:12px; color:var(--ink-light); margin-bottom:36px;"><span class="tier-chip paid">£29</span> Your three numbers — set before the emotion starts, from the ten methods below.</p>
+    <p style="font-size:12px; color:var(--ink-light); margin-bottom:36px;"><span class="tier-chip paid">£29</span> Your three numbers — set before the emotion starts, from the valuation methods below.</p>
 
-    <!-- FOOTBALL FIELD VISUAL -->
-    <div class="fade-up" style="background:white;border-radius:16px;padding:28px 28px 20px;margin-bottom:40px;box-shadow:0 2px 16px rgba(30,28,24,0.07);">
-      <p style="font-size:12px;font-weight:600;color:var(--teal);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:4px;">Example valuation football field</p>
-      <p style="font-size:13px;color:var(--ink-mid);margin-bottom:20px;">14 Maple Close, Bristol BS6 (fictional example) · Listed at <strong style="color:var(--ink);">£385,000</strong></p>
+    <!-- FOOTBALL FIELD VISUAL (real report card) -->
+    <div class="fade-up" style="margin-bottom:40px;">
+      <p style="font-size:12px;font-weight:600;color:var(--teal);letter-spacing:0.09em;text-transform:uppercase;margin-bottom:4px;">The valuation, straight from the report</p><p style="font-size:13px;color:var(--ink-mid);margin-bottom:14px;">Fictional example — 14 Maple Close, Bristol BS6, asking <strong style="color:var(--ink);">£385,000</strong>.</p>
+      <div class="ff-card">
+    <div class="ff-card-header">
+      <div class="ff-card-title">Football field valuation — 9 methods</div>
+      <div class="ff-card-sub">Each bar shows the low-to-high range for that method. The teal band is the weighted range. Weighted by data quality. Two further context-only methods complete the ten in the full report.</div>
+    </div>
+    <div class="ff-chart-wrap">
+      
+      
+      
+      
+      
+      
 
-      <svg width="100%" viewBox="0 0 680 392" xmlns="http://www.w3.org/2000/svg" role="img">
-        <title>HouseOffer valuation football field — fictional example property</title>
+      <svg viewBox="0 0 715 496" style="width:100%;display:block;" role="img" aria-label="Football field valuation chart">
 
-        <!-- Chart background -->
-        <rect x="150" y="20" width="510" height="332" rx="6" fill="#f7f3ed"/>
+        <!-- Weighted range band -->
+        
+        
+        
+        <rect x="339.7" y="6" width="106.9" height="414" fill="rgba(26,107,90,0.08)" rx="3"/>
+        
 
-        <!-- Grid lines at £320k, £340k, £360k, £380k, £400k -->
-        <line x1="150" y1="20" x2="150" y2="352" stroke="#e0d9ce" stroke-width="1"/>
-        <line x1="277" y1="20" x2="277" y2="352" stroke="#e0d9ce" stroke-width="1"/>
-        <line x1="405" y1="20" x2="405" y2="352" stroke="#e0d9ce" stroke-width="1"/>
-        <line x1="532" y1="20" x2="532" y2="352" stroke="#e0d9ce" stroke-width="1"/>
-        <line x1="660" y1="20" x2="660" y2="352" stroke="#e0d9ce" stroke-width="1"/>
+        <!-- Method bars -->
+        
+        
+        
+        
+        
+        
+        
 
-        <!-- Axis labels -->
-        <text x="150" y="14" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="#9b9488">£320k</text>
-        <text x="277" y="14" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="#9b9488">£340k</text>
-        <text x="405" y="14" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="#9b9488">£360k</text>
-        <text x="532" y="14" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="#9b9488">£380k</text>
-        <text x="660" y="14" text-anchor="middle" font-family="var(--font-sans)" font-size="11" fill="#9b9488">£400k</text>
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="23" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Comparable sales (HPI-adjusted)</text>
 
-        <!-- ASKING PRICE LINE: £385k -->
-        <line x1="564" y1="20" x2="564" y2="364" stroke="#b83232" stroke-width="1.5" stroke-dasharray="4,3"/>
-        <rect x="510" y="365" width="108" height="18" rx="9" fill="#fdeaea"/>
-        <text x="564" y="377" text-anchor="middle" font-family="var(--font-sans)" font-size="10" font-weight="500" fill="#b83232">Asking: £385k</text>
+        <!-- Bar track background -->
+        <rect x="210" y="12" width="460" height="18" fill="#f7f3ed" rx="3"/>
 
-        <!-- OPENING OFFER LINE: £355k -->
-        <line x1="385.9" y1="20" x2="385.9" y2="356" stroke="#0f6e56" stroke-width="2.5" stroke-dasharray="6,3"/>
-        <polygon points="385.9,362 380.9,354 390.9,354" fill="#0f6e56"/>
-        <rect x="308.9" y="365" width="154" height="18" rx="9" fill="#1a6b5a"/>
-        <text x="385.9" y="377" text-anchor="middle" font-family="var(--font-sans)" font-size="9.5" font-weight="600" fill="white">★ Opening offer: £357k</text>
+        <!-- Bar fill -->
+        <rect x="345.9" y="12" width="129.9" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
 
-        <!-- ROW 1: Comparable sold prices £345k–£375k -->
-        <text x="144" y="47" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Comparable</text>
-        <text x="144" y="60" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">sold prices</text>
-        <rect x="354.0" y="42" width="140.2" height="18" rx="5" fill="#e3f4ef" stroke="#1a6b5a" stroke-width="1.5"/>
-        <circle cx="424.1" cy="51" r="5" fill="#1a6b5a"/>
-        <text x="351.0" y="52" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#1a6b5a">£352k</text>
-        <text x="497.2" y="52" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#1a6b5a">£374k</text>
-        <!-- ROW 2: Previous sold price, adjusted to today £348k–£370k -->
-        <text x="144" y="85" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Previous sold</text>
-        <text x="144" y="98" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">price (adjusted)</text>
-        <rect x="373.1" y="80" width="89.3" height="18" rx="5" fill="#e8f0fa" stroke="#1a4e8c" stroke-width="1.5"/>
-        <circle cx="417.8" cy="89" r="5" fill="#1a4e8c"/>
-        <text x="370.1" y="90" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#1a4e8c">£355k</text>
-        <text x="465.4" y="90" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#1a4e8c">£369k</text>
-        <!-- ROW 3: Area price trend £338k–£372k -->
-        <text x="144" y="123" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Area price</text>
-        <text x="144" y="136" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">trend</text>
-        <rect x="322.1" y="118" width="153.0" height="18" rx="5" fill="#faeeda" stroke="#8b5e1a" stroke-width="1.5"/>
-        <circle cx="398.6" cy="127" r="5" fill="#8b5e1a"/>
-        <text x="319.1" y="128" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#8b5e1a">£347k</text>
-        <text x="478.1" y="128" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#8b5e1a">£371k</text>
-        <!-- ROW 4: Price per square metre £350k–£366k -->
-        <text x="144" y="161" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Price per</text>
-        <text x="144" y="174" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">square metre</text>
-        <rect x="373.1" y="156" width="70.1" height="18" rx="5" fill="#f0eafa" stroke="#6b3fa0" stroke-width="1.5"/>
-        <circle cx="408.2" cy="165" r="5" fill="#6b3fa0"/>
-        <text x="370.1" y="166" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#6b3fa0">£355k</text>
-        <text x="446.2" y="166" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#6b3fa0">£366k</text>
-        <!-- ROW 5: Automated valuation (unattributed) £342k–£371k -->
-        <text x="144" y="199" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Automated</text>
-        <text x="144" y="212" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">valuation</text>
-        <rect x="341.2" y="194" width="121.2" height="18" rx="5" fill="#fce4ec" stroke="#c2185b" stroke-width="1.5"/>
-        <circle cx="401.8" cy="203" r="5" fill="#c2185b"/>
-        <text x="338.2" y="204" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#c2185b">£350k</text>
-        <text x="465.4" y="204" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#c2185b">£369k</text>
-        <!-- ROW 6: Estimated lender range, modelled £340k–£362k -->
-        <text x="144" y="237" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Est. lender range</text>
-        <text x="144" y="250" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">(modelled)</text>
-        <rect x="341.2" y="232" width="51.0" height="18" rx="5" fill="#fce8d0" stroke="#e65100" stroke-width="1.5"/>
-        <circle cx="366.8" cy="241" r="5" fill="#e65100"/>
-        <text x="338.2" y="242" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#e65100">£350k</text>
-        <text x="395.2" y="242" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#e65100">£358k</text>
-        <!-- ROW 7: Asking-to-sold discount £343k–£370k -->
-        <text x="144" y="275" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">Asking-to-sold</text>
-        <text x="144" y="288" text-anchor="end" font-family="var(--font-sans)" font-size="11" fill="#5c5849">discount</text>
-        <rect x="297" y="270" width="172" height="18" rx="5" fill="#e8eaf6" stroke="#3949ab" stroke-width="1.5"/>
-        <circle cx="380" cy="279" r="5" fill="#3949ab"/>
-        <text x="294" y="280" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#3949ab">£343k</text>
-        <text x="472" y="280" font-family="var(--font-sans)" font-size="10" font-weight="600" fill="#3949ab">£370k</text>
-        <!-- ROW 8: Our weighted range £352k–£368k -->
-        <text x="144" y="313" text-anchor="end" font-family="var(--font-sans)" font-size="11" font-weight="500" fill="#0f6e56">Our weighted</text>
-        <text x="144" y="326" text-anchor="end" font-family="var(--font-sans)" font-size="11" font-weight="500" fill="#0f6e56">range</text>
-        <rect x="354" y="306" width="102" height="22" rx="6" fill="#1a6b5a"/>
-        <circle cx="405" cy="317" r="6" fill="white" stroke="#0f6e56" stroke-width="2"/>
-        <text x="351" y="319" text-anchor="end" font-family="var(--font-sans)" font-size="10" font-weight="700" fill="#0f6e56">£352k</text>
-        <text x="459" y="319" font-family="var(--font-sans)" font-size="10" font-weight="700" fill="#0f6e56">£368k</text>
+        <!-- Midpoint dot -->
+        <circle cx="410.9" cy="21" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="345.9" y="43" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">353k</text>
+        <text x="475.8" y="43" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">372k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="69" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">HPI-adjusted last sale</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="58" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="359.6" y="58" width="102.6" height="18"
+              fill="#1a6b5a" opacity="0.85" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="410.9" cy="67" r="4.5" fill="white"
+                stroke="#1a6b5a" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+        <text x="676" y="69" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#1a6b5a" font-weight="600">x2</text>
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="359.6" y="89" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">355k</text>
+        <text x="462.2" y="89" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">370k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="115" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Bedroom-matched local price</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="104" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="352.8" y="104" width="102.6" height="18"
+              fill="#1a6b5a" opacity="0.85" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="404.0" cy="113" r="4.5" fill="white"
+                stroke="#1a6b5a" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+        <text x="676" y="115" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#1a6b5a" font-weight="600">x2</text>
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="352.8" y="135" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">354k</text>
+        <text x="455.3" y="135" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">369k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="161" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Price per m²</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="150" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="359.6" y="150" width="75.2" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="397.2" cy="159" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="359.6" y="181" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">355k</text>
+        <text x="434.8" y="181" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">366k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="207" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Area price trend</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="196" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="304.9" y="196" width="164.1" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="386.9" cy="205" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="304.9" y="227" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">347k</text>
+        <text x="469.0" y="227" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">371k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="253" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Automated valuation</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="242" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="325.4" y="242" width="129.9" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="390.4" cy="251" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="325.4" y="273" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">350k</text>
+        <text x="455.3" y="273" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">369k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="299" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Est. lender range (modelled)</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="288" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="325.4" y="288" width="61.5" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="356.2" cy="297" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="325.4" y="319" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">350k</text>
+        <text x="386.9" y="319" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">359k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="345" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Rental yield implied value</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="334" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="318.6" y="334" width="82.0" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="359.6" cy="343" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="318.6" y="365" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">349k</text>
+        <text x="400.6" y="365" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">361k</text>
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Label (chart column is ~169px: abbreviate the long lender label;
+             the table below carries the full name) -->
+        <text x="204" y="391" text-anchor="end" font-size="11.5"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#5c5849" font-weight="500">Asking-to-sold discount</text>
+
+        <!-- Bar track background -->
+        <rect x="210" y="380" width="460" height="18" fill="#f7f3ed" rx="3"/>
+
+        <!-- Bar fill -->
+        <rect x="332.2" y="380" width="123.1" height="18"
+              fill="#9b9488" opacity="0.65" rx="3"/>
+
+        <!-- Midpoint dot -->
+        <circle cx="393.8" cy="389" r="4.5" fill="white"
+                stroke="#9b9488" stroke-width="2"/>
+
+        <!-- Weight indicator -->
+        
+
+        <!-- Low/High labels below bar -->
+        <text x="332.2" y="411" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">351k</text>
+        <text x="455.3" y="411" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">369k</text>
+        
+
+        <!-- Asking price vertical line -->
+        
+        <line x1="564.7" y1="6" x2="564.7" y2="430"
+              stroke="#b83232" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="564.7" y="442" text-anchor="middle" font-size="10"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#b83232" font-weight="600">Asking</text>
+
+        <!-- Recommended offer vertical line -->
+        
+        
+        <line x1="373.3" y1="6" x2="373.3" y2="430"
+              stroke="#1a6b5a" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="373.3" y="442" text-anchor="middle" font-size="10"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#1a6b5a" font-weight="600">Open with</text>
+        
+
+        <!-- Target vertical line -->
+        
+        
+        <line x1="393.8" y1="6" x2="393.8" y2="430"
+              stroke="#c06a1a" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="393.8" y="454" text-anchor="middle" font-size="10"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#c06a1a" font-weight="600">Target</text>
+        
+
+        <!-- Walk-away vertical line -->
+        
+        
+        <line x1="448.5" y1="6" x2="448.5" y2="430"
+              stroke="#b83232" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="448.5" y="442" text-anchor="middle" font-size="10"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#b83232" font-weight="600">Walk away</text>
+        
+
+        <!-- Price axis line -->
+        <line x1="210" y1="430" x2="670" y2="430"
+              stroke="#e0d9ce" stroke-width="1"/>
+
+        <!-- Left axis label £ -->
+        <text x="210" y="472" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">£333k</text>
+        <text x="670" y="472" text-anchor="middle" font-size="9"
+              font-family="Plus Jakarta Sans,sans-serif" fill="#9b9488">£400k</text>
 
       </svg>
 
-      <!-- Legend -->
-      <div style="display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:12px;padding-top:12px;border-top:1px solid var(--sand-border);">
-        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-mid);">
-          <div style="width:24px;height:3px;background:#0f6e56;border-radius:2px;"></div>Our weighted range
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-mid);">
-          <div style="width:24px;height:3px;background:#b83232;border-radius:2px;border-top:2px dashed #b83232;"></div>Asking price
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-mid);">
-          <div style="width:24px;height:3px;background:#0f6e56;border-radius:2px;border-top:2px dashed #0f6e56;"></div>Opening offer (£357k)
-        </div>
-        <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-mid);">
-          <div style="width:8px;height:8px;border-radius:50%;background:#5c5849;"></div>Midpoint estimate
-        </div>
+      <div class="ff-legend">
+        <div class="ff-legend-item"><div class="ff-legend-dot" style="background:#1a6b5a;"></div>Higher-weight method (x2)</div>
+        <div class="ff-legend-item"><div class="ff-legend-dot" style="background:#9b9488;"></div>Standard method</div>
+        <div class="ff-legend-item"><div class="ff-legend-dot" style="background:rgba(26,107,90,0.15);border:1px solid #1a6b5a;"></div>Weighted range</div>
+        <div class="ff-legend-item"><div style="width:14px;height:2px;background:#b83232;border-top:2px dashed #b83232;"></div>&nbsp;Asking price</div>
+        <div class="ff-legend-item"><div style="width:14px;height:2px;background:#1a6b5a;border-top:2px dashed #1a6b5a;"></div>&nbsp;Open with</div>
+        <div class="ff-legend-item"><div style="width:14px;height:2px;background:#c06a1a;border-top:2px dashed #c06a1a;"></div>&nbsp;Target</div>
+        <div class="ff-legend-item"><div style="width:14px;height:2px;background:#b83232;border-top:2px dashed #b83232;"></div>&nbsp;Walk away</div>
       </div>
-      <p style="font-size:11.5px;color:var(--ink-light);margin-top:10px;">Methods shown are the ones inside every real report. The full report also breaks out comparable sales with and without price-index adjustment, and rental-yield implied value where rental data exists.</p>
+    </div>
+  </div>
     </div>
 
 

@@ -256,3 +256,44 @@ calculations, complementary lenses, sharing only the floor/ceiling bounds.
 - Screenshots delivered in chat: homepage showcase (desktop), sample-report
   two-lens frontier, white-paper figure.
 - NOT merged, NOT deployed — awaiting CEO review (both repos).
+
+═══════════════════════════════════════════════════════════════════════
+# ADDENDUM 4 — homepage chart IS the real report chart
+═══════════════════════════════════════════════════════════════════════
+CEO: make the homepage £29 example match the actual paid-report football
+field, add Target + Walk away lines, keep the method table for the full
+report only (not the website), land walk-away on a clean £368k, widen the
+gutter. Applied:
+
+- index.html: the bespoke hand-built SVG football field is REPLACED by the
+  genuine report_paid.html ff-card, rendered statically. Same markup, chart
+  maths, styling and the new Open/Target/Walk away/Asking lines a paying
+  customer sees. Ported the 8 .ff-* CSS rules (no class collisions).
+- CHART ONLY on the homepage — no method table (that stays in the paid
+  report, per CEO). Chart header reads "9 methods" (the weighted set); the
+  card sub now reads "Two further context-only methods complete the ten in
+  the full report" and the trio caption drops its "ten methods below"
+  table reference — nothing on the page points at a table that isn't there.
+- Trio unchanged (£357k / £360k / £368k); walk-away line sits on £368k.
+
+Demo numbers are GENERATED, not authored — real trio + _offer_frontier math
+on a code-faithful full-data property (bedroom present, so raw comparable
+is the one context row; adjusted comparable demoted 2→1, bedroom-matched
+w2 — per app.py:2735-2738). Nine weighted method bars:
+  Comparable sales (HPI-adjusted) 353-372k, HPI-adjusted last sale 355-370k
+  (x2), Bedroom-matched local price 354-369k (x2), Price per m² 355-366k,
+  Area price trend 347-371k, Automated valuation 350-369k, Est. lender
+  range (modelled) 350-359k, Rental yield implied value 349-361k,
+  Asking-to-sold discount 351-369k → weighted 352,091-367,727 → open
+  357,000 / target 360,000 / walk 368,000 (real formula). Reproduce by
+  rendering report_paid.html's ff-card with this context.
+
+FINDING corrected in-thread: "full data → all ten bars" is false. The
+engine weights ~8-9 methods; some are always context (raw-vs-bedroom
+demotion, national-fallback asking-to-sold, scoring-only matched-sold).
+"Ten methods" is the full menu shown in the paid report's TABLE; the chart
+plots the weighted subset. Homepage now states this honestly.
+
+Companion backend change (Target/Walk away lines + widen) is on the same
+branch in houseoffer-backend (Addendum 2 there). Verified: functional
+checks pass, tag balance OK, desktop + mobile screenshots. NOT merged.
