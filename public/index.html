@@ -1445,7 +1445,9 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
           <li><span class="check">✓</span> Personalised to your buying position</li>
           <li><span class="check">✓</span> Instant online report</li>
         </ul>
-        <a class="btn-primary-full" href="https://houseoffer-backend.onrender.com/track?tier=29&postcode=homepage&verdict=pricing">Get my report — £29</a>
+        <!-- Checkout is per-report (Stripe unlocks a specific free report), so the
+             homepage funnel starts at the free form; next=form keeps the click tracked. -->
+        <a class="btn-primary-full" href="https://houseoffer-backend.onrender.com/track?tier=29&postcode=homepage&verdict=pricing&next=form">Get my report — £29</a>
         <a class="sample-link" href="/sample-report/">See a full sample report →</a>
       </div>
 
