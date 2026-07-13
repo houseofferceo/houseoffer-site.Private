@@ -677,6 +677,11 @@ a.btn-outline, a.btn-primary-full { display: block; text-align: center; text-dec
       </div>
       <h1>Found a house you love?<br>Find out what it's <em>really</em> worth.</h1>
       <p class="hero-sub"><strong>Everyone in the deal works for the seller. We work for you.</strong> Paste a Rightmove link and get the buyer's side of the table: what similar homes actually sold for, a defensible offer range, a deliberate opening position and your walk-away number — with a confidence score on every report so you know how far to trust it.</p>
+      <!-- Shown only when someone arrives from a £29 CTA (?unlock=29): the paid
+           report unlocks from a specific free report, so the funnel starts here. -->
+      <div id="unlock-callout" style="display:none; max-width:480px; margin-bottom:14px; padding:12px 16px; background:var(--teal-light); border:1px solid var(--teal-border); border-radius:var(--radius); font-size:14px; line-height:1.55; color:var(--ink-mid);">
+        <strong style="color:var(--teal);">One quick step first.</strong> The £29 report is built for your specific property — paste the link below and we'll run the free valuation first. You can unlock the full report from there.
+      </div>
       <form class="hero-form" id="hero-form" onsubmit="handleHeroSubmit(event)" style="flex-direction:column; max-width:480px;">
         <input class="hero-input" type="text" id="propUrl" name="property-url" placeholder="Paste your Rightmove link here…" style="width:100%; min-width:0;" required />
         <input class="hero-input" type="text" id="buyerEstimate" name="buyer_estimate" placeholder="What do you think it's worth?" style="width:100%; min-width:0;" inputmode="numeric" />
@@ -1648,6 +1653,12 @@ async function handleHeroSubmit(e) {
 // Every "start free" CTA scrolls to the hero form and focuses the URL input
 function focusHeroForm() {
   setTimeout(() => document.getElementById('propUrl').focus(), 400);
+}
+// Arrivals from a £29 CTA (?unlock=29, set by the backend /track redirect):
+// explain that the paid report unlocks from the free report they create here.
+if (new URLSearchParams(location.search).get('unlock')) {
+  document.getElementById('unlock-callout').style.display = 'block';
+  focusHeroForm();
 }
 // FAQ toggle
 document.querySelectorAll('.faq-q').forEach(q => {
